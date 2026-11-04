@@ -1,1 +1,1 @@
-v9 sửa lỗi các mặt thiệp đè lên nhau: chỉ một trang active được hiển thị, hidden có ưu tiên CSS cao nhất; sửa JavaScript chuyển trạng thái và chống cache ?v=9. Tải tất cả file lên GitHub Pages và ghi đè.
+v10: Thiết kế lại CSS sạch và JavaScript lật trang để tránh chồng nội dung. Tên cô dâu chú rể hiển thị nổi bật ở trang 2. Thiệp nhà gái hiển thị Đỗ Vân trước Minh Luật trên tiêu đề, bìa, trang lễ và chữ ký. Giữ QR, 4 trang và ?to=... để cá nhân hóa. Upload toàn bộ file vào repository GitHub Pages.

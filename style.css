@@ -1,217 +1,85 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap');
-:root{--wine:#95384d;--ink:#463a3b;--muted:#8d6670;--line:#d6b9aa;--paper:#fffcf6}
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap');
+:root{--wine:#96354c;--ink:#453738;--edge:#d7b6a7}
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;overflow-x:hidden}
-body{background:linear-gradient(150deg,#fff6f2,#f4dedc);color:var(--ink);font-family:'Be Vietnam Pro',sans-serif}
-.site{max-width:850px;margin:auto;text-align:center;padding:18px 10px 28px}
-.site>.eyebrow{font-size:11px;letter-spacing:.22em;color:var(--wine)}
-.site>h1{font:400 clamp(38px,7vw,64px)/1.2 'Great Vibes',cursive;color:var(--wine);margin:4px 0 6px}
-.subtitle{font-size:12px;margin:0 0 18px}
-.book-area{display:flex;align-items:center;justify-content:center;gap:14px}
-.book{position:relative;width:min(100%,470px);flex:0 1 470px;aspect-ratio:0.73;perspective:1400px;filter:drop-shadow(0 12px 14px #773e3e25)}
-.sheet.flip-page{position:absolute;inset:0;width:100%;height:100%;padding:clamp(26px,5vw,42px);background:var(--paper);border:1px solid #bf8c89;border-radius:5px;box-shadow:inset 0 0 0 10px #fffcf6,inset 0 0 0 11px var(--line);overflow:hidden;display:flex;justify-content:center;align-items:stretch;transform-origin:left center;backface-visibility:hidden}
-.sheet.flip-page[hidden]{display:none!important}
-.sheet .printed-content{position:relative;z-index:1;width:100%;min-height:0;display:flex;flex-direction:column;justify-content:center;align-items:stretch;text-align:left;gap:clamp(12px,2.2vw,18px);font-family:'Playfair Display',serif}
-.sheet p,.sheet h2{margin:0;line-height:1.5}
-.sheet .big-double-happiness{position:absolute;top:-38px;right:-18px;font-size:190px;color:#eee0d7;opacity:.7;pointer-events:none}
-.sheet .print-label{font-size:clamp(16px,2.7vw,20px);font-weight:600;letter-spacing:.03em}
-.sheet .print-couple{font:500 clamp(38px,6.5vw,54px)/1.22 'Playfair Display',serif;color:#ac6475;margin:16px 0 26px}
-.sheet .print-event,.sheet .print-place{font-size:clamp(12px,2.2vw,16px)}
-.sheet .print-event p,.sheet .print-place p{margin:4px 0}
-.sheet .print-lunar{font-size:clamp(11px,2vw,14px)}
-.sheet .print-place{margin-top:12px}
-.sheet.reception-paper .printed-content{justify-content:space-between;align-items:center;text-align:center;gap:8px;padding:8px 0}
-.sheet .print-signature{font:400 clamp(39px,7vw,58px)/1.15 'Great Vibes',cursive;color:var(--wine);margin:0 0 8px}
-.sheet .print-signature span{font-size:.65em}
-.sheet .print-invite{font-size:clamp(11px,2vw,15px);letter-spacing:.03em}
-.sheet .guest-underline{font:500 clamp(13px,2.3vw,16px) 'Playfair Display',serif;border-bottom:1px dotted #b9a29a;width:75%;padding:4px 0 8px}
-.sheet .print-reception-date strong{display:block;font:600 clamp(30px,5.4vw,42px)/1.15 'Playfair Display',serif;color:#a65c6e;margin:5px 0}
-.sheet .print-reception-date p,.sheet .print-reception-place p{font-size:clamp(11px,2vw,14px)}
-.sheet .print-welcome{font:400 clamp(28px,5.4vw,41px)/1.2 'Great Vibes',cursive;color:var(--wine)}
-.sheet .print-parents{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:12px;width:100%;padding-top:12px;border-top:1px solid #ddc8b7;margin-top:5px}
-.sheet .print-parents>div{display:flex!important;flex-direction:column!important;align-items:center;gap:5px;min-width:0;font:400 clamp(10px,1.85vw,13px)/1.4 'Playfair Display',serif;overflow-wrap:anywhere}
-.sheet .print-parents b{font-size:1.15em;margin-bottom:3px}
-.sheet.directions-paper .printed-content{align-items:center;text-align:center;gap:19px}
-.sheet .print-direction-title{font:600 clamp(22px,4.5vw,32px) 'Playfair Display',serif;color:var(--wine)}
-.sheet .direction-address{font-size:clamp(12px,2.2vw,16px)}
-.sheet .direction-qr{width:min(62%,215px);aspect-ratio:1;object-fit:contain;background:white;padding:6px}
-.sheet .direction-link{font:600 13px 'Be Vietnam Pro',sans-serif;color:var(--wine)}
-.sheet.cover-paper{background:linear-gradient(135deg,#fff9f5,#f5dddc);align-items:center;text-align:center}
-.cover-inner{height:100%;width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px;position:relative;z-index:1}
-.cover-ornament{position:absolute;top:13%;font-size:75px;color:#b46b78;opacity:.25}
-.cover-kicker{font:600 14px 'Playfair Display',serif;letter-spacing:.23em;color:var(--wine)}
-.cover-line{width:48%;height:1px;background:#d1a9a3}
-.cover-couple{font:400 clamp(52px,9vw,75px)/1.12 'Great Vibes',cursive;color:var(--wine)}
-.cover-couple span{font-size:.6em}
-.cover-ceremony{font:600 13px 'Playfair Display',serif;letter-spacing:.08em}
-.cover-guest{font:500 17px 'Playfair Display',serif;color:var(--wine)}
-.cover-date{font:600 25px 'Playfair Display',serif;letter-spacing:.15em;color:var(--wine)}
-.cover-lunar{font-size:12px}
-.cover-foot{position:absolute;bottom:12px;font-size:12px;color:var(--muted)}
-.nav{border:1px solid #dfb8be;border-radius:50%;background:#fff9f7;color:var(--wine);font-size:28px;width:44px;height:44px;flex:0 0 44px;cursor:pointer}
-.nav:disabled{opacity:.28;cursor:default}
-.controls{display:flex;align-items:center;justify-content:center;gap:18px;margin:18px auto}
-.counter{font-size:12px;color:var(--muted)}
-.pill{border:0;border-radius:30px;background:var(--wine);color:white;font:500 13px 'Be Vietnam Pro',sans-serif;padding:12px 23px;cursor:pointer}
-.hint,.links{font-size:11px;color:var(--muted);line-height:1.7}
+body{background:linear-gradient(135deg,#fff6f2,#f3dada);font-family:'Be Vietnam Pro',sans-serif;color:var(--ink)}
+.site{max-width:760px;margin:auto;padding:20px 8px 32px;text-align:center}
+.site>.eyebrow{font-size:11px;letter-spacing:.18em;color:var(--wine)}
+.site>h1{font:400 clamp(36px,7vw,62px)/1.15 'Great Vibes',cursive;color:var(--wine);margin:8px 0}
+.subtitle{font-size:12px;margin:0 0 20px}
+.book-area{display:flex;align-items:center;justify-content:center;gap:10px}
+.book{width:min(100%,455px);flex:0 1 455px;aspect-ratio:0.735;position:relative;perspective:1300px;filter:drop-shadow(0 13px 16px #703a3a23)}
+.book>.sheet{position:absolute;inset:0;width:100%;height:100%;margin:0;padding:clamp(25px,5vw,40px);background:#fffdf7;border:1px solid #bf8e8e;border-radius:4px;box-shadow:inset 0 0 0 10px #fffdf7,inset 0 0 0 11px var(--edge);overflow:hidden;transform-origin:left center;backface-visibility:hidden}
+.book>.sheet[hidden]{display:none!important}
+.book>.sheet.is-active{display:flex!important;flex-direction:column;justify-content:center;align-items:stretch}
+.book>.sheet:not(.is-active){display:none!important}
+.book>.sheet.turning{display:flex!important;z-index:3;animation:pageTurn .48s ease-in forwards}
+@keyframes pageTurn{0%{transform:rotateY(0);opacity:1}100%{transform:rotateY(-85deg);opacity:.1}}
+.sheet p,.sheet h2{margin:0}
+.cover-paper{background:linear-gradient(140deg,#fffaf7,#f6e0df)!important}
+.cover-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,2.5vw,21px);width:100%;height:100%;text-align:center;position:relative;z-index:1}
+.cover-ornament{position:absolute;top:8%;left:50%;transform:translateX(-50%);font-size:75px;color:#c78591;opacity:.24}
+.cover-kicker{font:600 17px 'Playfair Display',serif;letter-spacing:.17em;color:var(--wine)}
+.cover-line{width:55%;height:1px;background:#cba6a4}
+.cover-couple{font:400 clamp(45px,8vw,70px)/1.12 'Great Vibes',cursive;color:var(--wine);max-width:100%}
+.cover-couple span{font-size:.7em}
+.cover-ceremony{font:600 clamp(12px,2vw,16px) 'Playfair Display',serif;letter-spacing:.09em}
+.cover-guest{font:600 18px 'Playfair Display',serif;color:var(--wine)}
+.cover-date{font:600 clamp(24px,4vw,33px) 'Playfair Display',serif;letter-spacing:.12em;color:var(--wine)}
+.cover-lunar{font-size:12px;line-height:1.5}
+.cover-foot{font-size:12px;color:#96656c;margin-top:14px!important}
+.printed-content{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;gap:clamp(12px,2.2vw,19px);width:100%;height:100%;font-family:'Playfair Display',serif;text-align:left}
+.big-double-happiness{position:absolute;right:-15px;top:-35px;font-size:175px;color:#e7d9d1;opacity:.6;pointer-events:none}
+.print-label{font-size:clamp(16px,2.5vw,20px);font-weight:600}
+.ceremony-paper .print-couple{display:flex;flex-direction:column;align-items:flex-start;gap:0;font:400 clamp(49px,8.5vw,70px)/1.1 'Great Vibes',cursive;color:var(--wine);margin:10px 0 16px}
+.ceremony-paper .print-couple>span{display:block;white-space:nowrap}
+.ceremony-paper .print-couple .ampersand{font-size:.65em;align-self:center;line-height:.7}
+.print-event,.print-place{font-size:clamp(12px,2.2vw,16px);line-height:1.65}
+.print-event p,.print-place p{margin:3px 0}
+.print-lunar{font-size:clamp(11px,1.8vw,13px);line-height:1.5}
+.print-place{margin-top:10px}
+.reception-paper .printed-content{justify-content:space-between;align-items:center;text-align:center;gap:7px;padding:8px 0}
+.print-signature{font:400 clamp(40px,7vw,58px)/1.15 'Great Vibes',cursive;color:var(--wine)}
+.print-signature span{font-size:.7em}
+.print-invite{font-size:clamp(11px,1.9vw,14px);line-height:1.5}
+.guest-underline{font-size:clamp(13px,2vw,16px);font-weight:600;width:75%;border-bottom:1px dotted #b49c94;padding:5px 0 9px}
+.print-reception-date p,.print-reception-place p{font-size:clamp(11px,1.9vw,14px);line-height:1.5}
+.print-reception-date strong{display:block;font:600 clamp(29px,5vw,40px)/1.2 'Playfair Display',serif;color:#ab6475}
+.print-welcome{font:400 clamp(29px,5vw,39px)/1.1 'Great Vibes',cursive;color:var(--wine)}
+.print-parents{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;width:100%;border-top:1px solid #dcc6b7;padding-top:12px}
+.print-parents>div{min-width:0;display:flex;flex-direction:column;align-items:center;gap:4px;font:400 clamp(10px,1.7vw,13px)/1.45 'Playfair Display',serif}
+.print-parents b{font-size:1.15em;margin-bottom:2px}
+.directions-paper .printed-content{align-items:center;text-align:center;gap:18px}
+.print-direction-title{font-size:clamp(22px,4vw,30px);color:var(--wine)}
+.direction-address{font-size:clamp(12px,2vw,16px);line-height:1.6}
+.direction-qr{width:min(60%,220px);aspect-ratio:1;object-fit:contain;padding:6px;background:white}
+.direction-link{font:600 13px 'Be Vietnam Pro',sans-serif;color:var(--wine)}
+.nav{width:42px;height:42px;flex:0 0 42px;border:1px solid #e1b8bf;background:#fff9f8;color:var(--wine);border-radius:50%;font-size:27px;cursor:pointer}
+.nav:disabled{opacity:.3;cursor:default}
+.controls{display:flex;align-items:center;justify-content:center;gap:17px;margin:18px auto}
+.counter{font-size:12px;color:#906069}
+.pill{border:0;border-radius:24px;background:var(--wine);color:white;font:500 13px 'Be Vietnam Pro',sans-serif;padding:12px 22px;cursor:pointer}
+.hint,.links{font-size:11px;line-height:1.6;color:#956d73}
 .links a{color:var(--wine)}
 @media(max-width:520px){
 .site{padding:13px 4px 25px}
-.site>h1{font-size:clamp(36px,9vw,48px)}
+.site>h1{font-size:clamp(35px,9vw,49px)}
 .subtitle{font-size:11px;margin-bottom:14px}
 .book-area{gap:3px}
-.book{width:calc(100vw - 79px);flex:0 1 auto;max-width:390px}
+.book{width:calc(100vw - 78px);flex:0 1 auto;max-width:390px}
 .nav{width:33px;height:39px;flex-basis:33px;font-size:23px}
-.sheet.flip-page{padding:clamp(17px,4.5vw,27px);box-shadow:inset 0 0 0 7px #fffcf6,inset 0 0 0 8px var(--line)}
-.sheet .printed-content{gap:clamp(8px,2vw,12px)}
-.sheet .print-couple{margin:7px 0 13px;font-size:clamp(32px,8vw,44px)}
-.sheet .print-place{margin-top:6px}
-.sheet.reception-paper .printed-content{gap:3px;padding:2px 0}
-.sheet .print-signature{font-size:clamp(35px,9vw,47px);margin-bottom:3px}
-.sheet .print-welcome{font-size:clamp(27px,7vw,34px)}
-.sheet .print-parents{gap:6px;padding-top:8px}
-.sheet .print-parents>div{font-size:clamp(9px,2.5vw,12px)}
-.cover-inner{gap:12px}
-.cover-couple{font-size:clamp(43px,11vw,60px)}
+.book>.sheet{padding:clamp(17px,4.4vw,27px);box-shadow:inset 0 0 0 7px #fffdf7,inset 0 0 0 8px var(--edge)}
+.cover-inner{gap:clamp(9px,2.4vw,14px)}
+.cover-couple{font-size:clamp(42px,10vw,56px)}
+.cover-kicker{font-size:15px}
+.printed-content{gap:clamp(8px,2vw,13px)}
+.ceremony-paper .print-couple{font-size:clamp(43px,10vw,58px);margin:8px 0 14px}
+.reception-paper .printed-content{gap:3px;padding:2px 0}
+.print-signature{font-size:clamp(36px,9vw,46px)}
+.print-welcome{font-size:clamp(25px,6.5vw,34px)}
+.print-parents{gap:6px;padding-top:8px}
+.print-parents>div{font-size:clamp(9px,2.35vw,12px)}
 }
-@media(max-width:350px){.book{width:calc(100vw - 68px)}.nav{width:28px;flex-basis:28px}.sheet.flip-page{padding:15px}}
-@media(prefers-reduced-motion:reduce){.sheet.flip-page{transition:none!important}}
-
-
-/* v8: precise layout overrides; keep all cover content inside its card */
-.book > .sheet.cover-paper {
-  display:flex !important;
-  flex-direction:column !important;
-  justify-content:center !important;
-  align-items:center !important;
-  text-align:center !important;
-  padding:clamp(28px,7%,48px) !important;
-}
-.book > .sheet.cover-paper > .cover-inner {
-  display:flex !important;
-  flex-direction:column !important;
-  justify-content:center !important;
-  align-items:center !important;
-  width:100% !important;
-  height:100% !important;
-  min-height:0 !important;
-  gap:clamp(13px,2.5vw,23px) !important;
-  text-align:center !important;
-  position:relative;
-  z-index:2;
-}
-.book .cover-inner > * {flex-shrink:0}
-.book .cover-inner .cover-kicker {
-  font:600 clamp(13px,2.6vw,18px)/1.4 'Playfair Display',serif !important;
-  letter-spacing:.17em;
-  color:#92344c;
-}
-.book .cover-inner .cover-couple {
-  font-family:'Great Vibes',cursive !important;
-  font-size:clamp(51px,8.5vw,79px) !important;
-  line-height:1.15 !important;
-  color:#92344c !important;
-  max-width:100%;
-  margin:8px 0 !important;
-  overflow-wrap:normal;
-}
-.book .cover-inner .cover-ceremony {
-  font:600 clamp(12px,2.1vw,16px)/1.5 'Playfair Display',serif !important;
-  letter-spacing:.1em;
-}
-.book .cover-inner .cover-guest {
-  font:500 clamp(15px,2.8vw,20px)/1.4 'Playfair Display',serif !important;
-  color:#92344c;
-}
-.book .cover-inner .cover-date {
-  font:600 clamp(23px,4.5vw,32px)/1.3 'Playfair Display',serif !important;
-  letter-spacing:.09em;
-  color:#92344c;
-}
-.book .cover-inner .cover-lunar {
-  font:400 clamp(10px,1.8vw,13px)/1.6 'Be Vietnam Pro',sans-serif !important;
-}
-.book .cover-inner .cover-foot {
-  position:static !important;
-  margin-top:clamp(12px,3vw,26px) !important;
-  font:400 12px/1.5 'Be Vietnam Pro',sans-serif !important;
-  color:#936b70;
-}
-.book .cover-ornament {
-  top:8% !important;
-  left:50% !important;
-  right:auto !important;
-  transform:translateX(-50%);
-  font-size:clamp(60px,12vw,95px) !important;
-  opacity:.18;
-}
-.book .ceremony-paper .print-couple {
-  display:flex !important;
-  flex-direction:column !important;
-  gap:0 !important;
-  align-items:flex-start;
-  font-family:'Great Vibes',cursive !important;
-  font-size:clamp(51px,8.5vw,72px) !important;
-  line-height:1.05 !important;
-  font-weight:400 !important;
-  color:#92344c !important;
-  margin:12px 0 22px !important;
-}
-.book .ceremony-paper .print-couple .ampersand {
-  align-self:center;
-  font-size:.58em;
-  line-height:.75;
-}
-.book .reception-paper .print-signature {
-  font-family:'Great Vibes',cursive !important;
-  color:#92344c !important;
-}
-.book .reception-paper .print-parents {
-  display:grid !important;
-  grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
-  gap:14px !important;
-  width:100% !important;
-}
-.book .reception-paper .print-parents > div {
-  display:flex !important;
-  flex-direction:column !important;
-  align-items:center !important;
-  text-align:center !important;
-  gap:4px !important;
-}
-@media(max-width:520px) {
-  .book > .sheet.cover-paper {padding:20px !important}
-  .book > .sheet.cover-paper > .cover-inner {gap:clamp(9px,2.7vw,15px) !important}
-  .book .cover-inner .cover-couple {font-size:clamp(43px,11vw,59px) !important}
-  .book .ceremony-paper .print-couple {font-size:clamp(42px,11vw,59px) !important;margin:7px 0 12px !important}
-  .book .cover-ornament {top:5% !important}
-}
-
-/* CRITICAL: hidden pages must never render, including the cover */
-html body .book > article.sheet.flip-page[hidden],
-html body .book > article.sheet.flip-page[hidden] *,
-html body .book > article.sheet.flip-page:not(.is-active) {
-  display: none !important;
-}
-html body .book > article.sheet.flip-page.is-active {
-  display: flex !important;
-  visibility: visible !important;
-}
-/* Explicit vertical layout for the invitation page */
-html body .book > .sheet.reception-paper .printed-content {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: space-evenly !important;
-  height: 100%;
-  gap: 7px;
-}
-html body .book > .sheet.reception-paper .print-parents {
-  display: grid !important;
-  grid-template-columns: repeat(2,minmax(0,1fr)) !important;
-}
-html body .book > .sheet.reception-paper .print-parents > div {
-  display: flex !important;
-  flex-direction: column !important;
-}
+@media(max-width:360px){.book{width:calc(100vw - 70px)}.nav{width:29px;flex-basis:29px}.book>.sheet{padding:15px}}
+@media(prefers-reduced-motion:reduce){.book>.sheet.turning{animation:none}}
