@@ -77,3 +77,113 @@ body{background:linear-gradient(150deg,#fff6f2,#f4dedc);color:var(--ink);font-fa
 }
 @media(max-width:350px){.book{width:calc(100vw - 68px)}.nav{width:28px;flex-basis:28px}.sheet.flip-page{padding:15px}}
 @media(prefers-reduced-motion:reduce){.sheet.flip-page{transition:none!important}}
+
+
+/* v8: precise layout overrides; keep all cover content inside its card */
+.book > .sheet.cover-paper {
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:center !important;
+  text-align:center !important;
+  padding:clamp(28px,7%,48px) !important;
+}
+.book > .sheet.cover-paper > .cover-inner {
+  display:flex !important;
+  flex-direction:column !important;
+  justify-content:center !important;
+  align-items:center !important;
+  width:100% !important;
+  height:100% !important;
+  min-height:0 !important;
+  gap:clamp(13px,2.5vw,23px) !important;
+  text-align:center !important;
+  position:relative;
+  z-index:2;
+}
+.book .cover-inner > * {flex-shrink:0}
+.book .cover-inner .cover-kicker {
+  font:600 clamp(13px,2.6vw,18px)/1.4 'Playfair Display',serif !important;
+  letter-spacing:.17em;
+  color:#92344c;
+}
+.book .cover-inner .cover-couple {
+  font-family:'Great Vibes',cursive !important;
+  font-size:clamp(51px,8.5vw,79px) !important;
+  line-height:1.15 !important;
+  color:#92344c !important;
+  max-width:100%;
+  margin:8px 0 !important;
+  overflow-wrap:normal;
+}
+.book .cover-inner .cover-ceremony {
+  font:600 clamp(12px,2.1vw,16px)/1.5 'Playfair Display',serif !important;
+  letter-spacing:.1em;
+}
+.book .cover-inner .cover-guest {
+  font:500 clamp(15px,2.8vw,20px)/1.4 'Playfair Display',serif !important;
+  color:#92344c;
+}
+.book .cover-inner .cover-date {
+  font:600 clamp(23px,4.5vw,32px)/1.3 'Playfair Display',serif !important;
+  letter-spacing:.09em;
+  color:#92344c;
+}
+.book .cover-inner .cover-lunar {
+  font:400 clamp(10px,1.8vw,13px)/1.6 'Be Vietnam Pro',sans-serif !important;
+}
+.book .cover-inner .cover-foot {
+  position:static !important;
+  margin-top:clamp(12px,3vw,26px) !important;
+  font:400 12px/1.5 'Be Vietnam Pro',sans-serif !important;
+  color:#936b70;
+}
+.book .cover-ornament {
+  top:8% !important;
+  left:50% !important;
+  right:auto !important;
+  transform:translateX(-50%);
+  font-size:clamp(60px,12vw,95px) !important;
+  opacity:.18;
+}
+.book .ceremony-paper .print-couple {
+  display:flex !important;
+  flex-direction:column !important;
+  gap:0 !important;
+  align-items:flex-start;
+  font-family:'Great Vibes',cursive !important;
+  font-size:clamp(51px,8.5vw,72px) !important;
+  line-height:1.05 !important;
+  font-weight:400 !important;
+  color:#92344c !important;
+  margin:12px 0 22px !important;
+}
+.book .ceremony-paper .print-couple .ampersand {
+  align-self:center;
+  font-size:.58em;
+  line-height:.75;
+}
+.book .reception-paper .print-signature {
+  font-family:'Great Vibes',cursive !important;
+  color:#92344c !important;
+}
+.book .reception-paper .print-parents {
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+  gap:14px !important;
+  width:100% !important;
+}
+.book .reception-paper .print-parents > div {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  text-align:center !important;
+  gap:4px !important;
+}
+@media(max-width:520px) {
+  .book > .sheet.cover-paper {padding:20px !important}
+  .book > .sheet.cover-paper > .cover-inner {gap:clamp(9px,2.7vw,15px) !important}
+  .book .cover-inner .cover-couple {font-size:clamp(43px,11vw,59px) !important}
+  .book .ceremony-paper .print-couple {font-size:clamp(42px,11vw,59px) !important;margin:7px 0 12px !important}
+  .book .cover-ornament {top:5% !important}
+}

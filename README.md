@@ -1,1 +1,1 @@
-Phiên bản v7: thêm trang bìa THIỆP CƯỚI; 4 trang (bìa, nghi lễ, tiệc và bố mẹ 2 cột, QR). CSS viết lại hoàn toàn. Upload đè index.html, nha-trai.html, nha-gai.html, style.css, script.js và assets lên GitHub Pages.
+v8: Sửa bố cục bìa, căn giữa nội dung, đồng nhất font Great Vibes cho tên Minh Luật & Đỗ Vân trên bìa và trang lễ cưới. Thêm version CSS ?v=8 chống cache. Bố mẹ nhà trai/nhà gái nằm hai cột song song. Upload toàn bộ file vào GitHub Pages.
