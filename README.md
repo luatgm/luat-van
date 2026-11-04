@@ -12,3 +12,6 @@ Giải nén và tải **các file bên trong thư mục** lên repository `luatg
 Thêm `?to=Anh%20Hieu` vào cuối đường dẫn của từng thiệp. Tên khách hiện trên thiệp; không có khung nhập tên trong thiệp.
 
 QR sử dụng các ảnh QR đã gửi. Vui lòng thử quét trên điện thoại để kiểm tra vị trí trước khi gửi khách.
+
+## Responsive v2
+Trên màn hình <=700px thiệp hiển thị từng trang riêng (6 trang), trên màn hình lớn hiển thị 2 trang (3 lượt lật). Có thể vuốt ngang hoặc bấm mũi tên.
