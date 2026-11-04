@@ -1,1 +1,1 @@
-Phiên bản v5: Bố cục thiệp giống ảnh chụp. Trang 1: toàn bộ lễ thành hôn/vu quy; trang 2: toàn bộ lời mời tiệc, ngày giờ, địa chỉ, tên bố mẹ; trang 3: QR và đường dẫn chỉ đường. Hai thiệp nhà trai/nhà gái riêng. Tên khách có thể cá nhân hóa bằng ?to=Tên khách. Upload đè toàn bộ file lên GitHub Pages.
+v6: CSS viết lại gọn, sửa lỗi nội dung bị thu nhỏ ở giữa thiệp. Bố mẹ hai bên nằm song song 2 cột ở cuối mặt mời dự tiệc. Thiệp nhà trai và nhà gái riêng, mỗi thiệp 3 mặt lật, QR ở mặt cuối. Upload đè các file trong repository GitHub Pages.
