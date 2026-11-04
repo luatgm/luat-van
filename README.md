@@ -1,1 +1,1 @@
-v8: Sửa bố cục bìa, căn giữa nội dung, đồng nhất font Great Vibes cho tên Minh Luật & Đỗ Vân trên bìa và trang lễ cưới. Thêm version CSS ?v=8 chống cache. Bố mẹ nhà trai/nhà gái nằm hai cột song song. Upload toàn bộ file vào GitHub Pages.
+v9 sửa lỗi các mặt thiệp đè lên nhau: chỉ một trang active được hiển thị, hidden có ưu tiên CSS cao nhất; sửa JavaScript chuyển trạng thái và chống cache ?v=9. Tải tất cả file lên GitHub Pages và ghi đè.

@@ -187,3 +187,31 @@ body{background:linear-gradient(150deg,#fff6f2,#f4dedc);color:var(--ink);font-fa
   .book .ceremony-paper .print-couple {font-size:clamp(42px,11vw,59px) !important;margin:7px 0 12px !important}
   .book .cover-ornament {top:5% !important}
 }
+
+/* CRITICAL: hidden pages must never render, including the cover */
+html body .book > article.sheet.flip-page[hidden],
+html body .book > article.sheet.flip-page[hidden] *,
+html body .book > article.sheet.flip-page:not(.is-active) {
+  display: none !important;
+}
+html body .book > article.sheet.flip-page.is-active {
+  display: flex !important;
+  visibility: visible !important;
+}
+/* Explicit vertical layout for the invitation page */
+html body .book > .sheet.reception-paper .printed-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: space-evenly !important;
+  height: 100%;
+  gap: 7px;
+}
+html body .book > .sheet.reception-paper .print-parents {
+  display: grid !important;
+  grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+}
+html body .book > .sheet.reception-paper .print-parents > div {
+  display: flex !important;
+  flex-direction: column !important;
+}

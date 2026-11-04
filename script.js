@@ -5,7 +5,7 @@ const flip=document.getElementById('flip');
 const counter=document.getElementById('counter');
 let current=0, busy=false;
 function refresh(){
- pages.forEach((p,i)=>{p.hidden=i!==current;p.style.transform='';p.style.opacity='';p.style.zIndex='';});
+ pages.forEach((p,i)=>{p.hidden=i!==current;p.classList.toggle('is-active',i===current);p.style.transform='';p.style.opacity='';p.style.zIndex='';});
  counter.textContent=`${current+1} / ${pages.length}`;
  prev.disabled=current===0;next.disabled=current===pages.length-1;
  flip.textContent=current===pages.length-1?'↶ Về bìa thiệp':'📖 Lật trang';
@@ -15,7 +15,7 @@ async function turn(target){
  busy=true;
  const forward=target>current;
  const oldPage=pages[current],newPage=pages[target];
- newPage.hidden=false;
+ newPage.hidden=false;newPage.classList.add('is-active');
  newPage.style.zIndex='1';oldPage.style.zIndex='2';
  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  if(!reduce){
