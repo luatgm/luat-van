@@ -50,3 +50,50 @@
  .ribbon{width:calc(100% + 40px);margin-left:-20px;margin-right:-20px}
 }
 @media(prefers-reduced-motion:reduce){.flip-next,.flip-prev{animation:none!important}}
+
+/* Version 3: single-page animated 3D page turn on every screen */
+html,body{overflow-x:hidden}
+.site{max-width:800px;margin:0 auto;padding:22px 15px 38px}
+.site>h1{font-size:clamp(39px,7vw,66px);line-height:1.15;margin:8px 0 10px}
+.subtitle{font-size:clamp(12px,2.4vw,14px);margin:0 auto 18px;line-height:1.6}
+.book-area{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:0}
+.book{position:relative;display:block;flex:1 1 auto;width:min(100%,520px);max-width:520px;height:clamp(590px,95vw,720px);margin:0;perspective:1700px;transform-style:preserve-3d;filter:drop-shadow(0 14px 18px #7239442a);overflow:visible}
+.book .flip-page{position:absolute;inset:0;display:flex!important;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%;min-width:0;padding:42px 38px;background:#fff8f3;border:2px solid #bb8584;border-radius:13px!important;box-shadow:inset 0 0 25px #60363a10;transform-origin:left center;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform-style:preserve-3d;overflow:hidden}
+.book .flip-page[hidden]{display:none!important}
+.book .flip-page:before{inset:12px;border-radius:7px}
+.book .flip-page .rose{font-size:31px;top:18px;left:19px}
+.book .flip-page h2{font-size:clamp(23px,4.7vw,32px);line-height:1.25;margin:10px 0 18px}
+.book .flip-page h3{font-size:clamp(13px,2.7vw,16px);margin:12px 0}
+.book .flip-page p{font-size:clamp(12px,2.5vw,14px);line-height:1.7;margin:8px 0}
+.book .flip-page .small{font-size:clamp(10px,2vw,12px)}
+.book .flip-page .eyebrow{font-size:11px}
+.book .flip-page .names{font-size:clamp(49px,9vw,72px);line-height:1.2;margin:20px 0}
+.book .flip-page .day{font-size:22px}
+.book .flip-page .invite-to{font-size:clamp(17px,3.6vw,23px)}
+.book .flip-page .parents{font-size:13px!important}
+.book .flip-page .event{padding:10px 0}
+.book .flip-page .event b{font-size:13px}
+.book .flip-page .qr{width:clamp(140px,31vw,200px);height:clamp(140px,31vw,200px);margin:12px auto}
+.book .flip-page .map-link{font-size:13px}
+.book .flip-page .calendar{max-width:320px;gap:3px;font-size:12px}
+.book .flip-page .calendar>*{min-height:27px}
+.book .flip-page .rule{margin:16px auto}
+.book .flip-page .ribbon{width:calc(100% + 76px);margin-left:-38px;margin-right:-38px}
+.nav{position:relative;top:auto;left:auto!important;right:auto!important;flex:0 0 43px;width:43px;height:43px;z-index:10}
+.controls{margin:20px auto 0;min-height:44px;gap:14px}
+.hint{max-width:520px;margin:15px auto 0;font-size:12px;line-height:1.6}
+@media(max-width:650px){
+ .site{padding:15px 7px 25px}
+ .book-area{gap:4px}
+ .book{height:clamp(560px,155vw,700px)}
+ .book .flip-page{padding:32px 23px}
+ .book .flip-page .names{font-size:clamp(39px,10vw,57px)}
+ .book .flip-page .ribbon{width:calc(100% + 46px);margin-left:-23px;margin-right:-23px}
+ .book .flip-page .calendar>*{min-height:23px}
+ .book .flip-page .qr{width:clamp(125px,37vw,180px);height:clamp(125px,37vw,180px)}
+ .nav{flex-basis:29px;width:29px;height:39px;font-size:23px}
+ .book .flip-page p{font-size:clamp(11px,3vw,13px)}
+ .book .flip-page .parents{font-size:12px!important}
+}
+@media(max-width:375px){.book{height:590px}.book .flip-page{padding:25px 15px}.book .flip-page .ribbon{width:calc(100% + 30px);margin-left:-15px;margin-right:-15px}.book .flip-page .calendar>*{min-height:20px}.book .flip-page .qr{width:125px;height:125px}}
+@media(prefers-reduced-motion:reduce){.book .flip-page{animation:none!important}}

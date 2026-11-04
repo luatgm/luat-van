@@ -1,30 +1,41 @@
-const spreads=[...document.querySelectorAll('.spread')];
-const sheets=spreads.flatMap(spread=>[...spread.querySelectorAll('.sheet')]);
-const prev=document.getElementById('prev'),next=document.getElementById('next'),flip=document.getElementById('flip'),counter=document.getElementById('counter');
-const mq=window.matchMedia('(max-width: 700px)');
-let current=0;
-function total(){return mq.matches?sheets.length:spreads.length}
-function show(i,dir=1){
- const count=total();if(i<0||i>=count)return;
- current=i;
- spreads.forEach((spread,idx)=>{
-  const active=mq.matches?Math.floor(i/2)===idx:i===idx;
-  spread.hidden=!active;
-  const children=[...spread.querySelectorAll('.sheet')];
-  children.forEach((sheet,j)=>{sheet.hidden=mq.matches?(!active||i%2!==j):!active});
-  if(active){spread.classList.remove('flip-next','flip-prev');void spread.offsetWidth;spread.classList.add(dir>0?'flip-next':'flip-prev')}
- });
- prev.disabled=i===0;next.disabled=i===count-1;
- flip.textContent=i===count-1?'↶ Về bìa thiệp':'📖 Lật thiệp';
- counter.textContent=`${i+1} / ${count}`;
+const pages=[...document.querySelectorAll('.book .flip-page')];
+const prev=document.getElementById('prev');
+const next=document.getElementById('next');
+const flip=document.getElementById('flip');
+const counter=document.getElementById('counter');
+let current=0, busy=false;
+function refresh(){
+ pages.forEach((p,i)=>{p.hidden=i!==current;p.style.transform='';p.style.opacity='';p.style.zIndex='';});
+ counter.textContent=`${current+1} / ${pages.length}`;
+ prev.disabled=current===0;next.disabled=current===pages.length-1;
+ flip.textContent=current===pages.length-1?'↶ Về bìa thiệp':'📖 Lật trang';
 }
-prev.addEventListener('click',()=>show(current-1,-1));
-next.addEventListener('click',()=>show(current+1,1));
-flip.addEventListener('click',()=>show(current===total()-1?0:current+1,current===total()-1?-1:1));
+async function turn(target){
+ if(busy||target<0||target>=pages.length||target===current)return;
+ busy=true;
+ const forward=target>current;
+ const oldPage=pages[current],newPage=pages[target];
+ newPage.hidden=false;
+ newPage.style.zIndex='1';oldPage.style.zIndex='2';
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ if(!reduce){
+  const duration=620;
+  const oldAnim=oldPage.animate([
+   {transform:'rotateY(0deg)',filter:'brightness(1)',opacity:1},
+   {transform:`rotateY(${forward?-88:88}deg)`,filter:'brightness(.8)',opacity:.55}
+  ],{duration,easing:'cubic-bezier(.45,0,.25,1)',fill:'forwards'});
+  await oldAnim.finished.catch(()=>{});
+  oldAnim.cancel();
+ }
+ current=target;
+ refresh();busy=false;
+}
+prev.addEventListener('click',()=>turn(current-1));
+next.addEventListener('click',()=>turn(current+1));
+flip.addEventListener('click',()=>turn(current===pages.length-1?0:current+1));
 const book=document.querySelector('.book');let startX=null;
 book.addEventListener('touchstart',e=>{startX=e.touches[0].clientX},{passive:true});
-book.addEventListener('touchend',e=>{if(startX===null)return;const delta=e.changedTouches[0].clientX-startX;if(Math.abs(delta)>40)show(current+(delta<0?1:-1),delta<0?1:-1);startX=null},{passive:true});
-document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')show(current+1,1);if(e.key==='ArrowLeft')show(current-1,-1)});
-mq.addEventListener('change',()=>show(0));
-const name=new URLSearchParams(location.search).get('to');if(name){document.querySelectorAll('.guest').forEach(el=>el.textContent=name.slice(0,100))}
-show(0);
+book.addEventListener('touchend',e=>{if(startX===null)return;const dx=e.changedTouches[0].clientX-startX;if(Math.abs(dx)>45)turn(current+(dx<0?1:-1));startX=null},{passive:true});
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')turn(current+1);if(e.key==='ArrowLeft')turn(current-1)});
+const guest=new URLSearchParams(location.search).get('to');if(guest){document.querySelectorAll('.guest').forEach(el=>el.textContent=guest.slice(0,100));}
+refresh();
