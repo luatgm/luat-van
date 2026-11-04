@@ -1,1 +1,1 @@
-v6: CSS viết lại gọn, sửa lỗi nội dung bị thu nhỏ ở giữa thiệp. Bố mẹ hai bên nằm song song 2 cột ở cuối mặt mời dự tiệc. Thiệp nhà trai và nhà gái riêng, mỗi thiệp 3 mặt lật, QR ở mặt cuối. Upload đè các file trong repository GitHub Pages.
+Phiên bản v7: thêm trang bìa THIỆP CƯỚI; 4 trang (bìa, nghi lễ, tiệc và bố mẹ 2 cột, QR). CSS viết lại hoàn toàn. Upload đè index.html, nha-trai.html, nha-gai.html, style.css, script.js và assets lên GitHub Pages.
