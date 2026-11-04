@@ -123,3 +123,33 @@ html,body{overflow-x:hidden}
 .parents-two{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;font-family:Georgia,serif;font-size:clamp(11px,1.7vw,15px);line-height:1.65;margin-top:10px}
 .location-paper .qr{width:clamp(140px,38vw,230px);height:auto;max-height:230px;object-fit:contain}
 @media(max-width:550px){.site{padding:16px 10px}.site>h1{font-size:clamp(34px,9vw,52px)}.book-area{gap:3px}.nav{flex-shrink:0}.book{width:min(100%,390px)}.sheet{padding:24px 17px!important;gap:9px}.parents-two{gap:5px}.reception-paper{gap:7px}.reception-paper .warm-message{font-size:28px}}
+
+/* V5: match the supplied physical invitation: compact information on each face */
+.book{width:min(100%,470px);height:auto;min-height:0;aspect-ratio:0.73}
+.sheet.print-paper{position:absolute;inset:0;width:100%;height:100%;padding:clamp(22px,5vw,42px)!important;background:linear-gradient(110deg,#f7f6ec,#fffef7 50%,#f9f8ef);border:1px solid #d8d1c6;border-radius:2px;box-shadow:inset 3px 0 14px #a4a18b12;text-align:left;display:flex;align-items:stretch;justify-content:center;overflow:hidden}
+.sheet.print-paper:before{display:none}
+.printed-content{position:relative;z-index:1;width:100%;display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:clamp(8px,1.9vw,17px);font-family:Georgia,'Times New Roman',serif;color:#393737}
+.sheet.print-paper p{font-size:clamp(12px,2.3vw,17px);line-height:1.5;margin:0}
+.big-double-happiness{position:absolute;right:-3%;top:-7%;font-size:clamp(130px,31vw,220px);color:#e3dfce;opacity:.48;pointer-events:none}
+.print-label{font-size:clamp(15px,3vw,20px)!important;font-weight:bold;letter-spacing:.04em}
+.print-couple{font-family:Georgia,serif!important;font-size:clamp(35px,7vw,51px)!important;line-height:1.16!important;color:#aa6472!important;font-weight:500!important;margin:20px 0 28px!important}
+.print-event p,.print-place p{margin:3px 0!important}
+.print-event{margin-top:6px}.print-place{margin-top:20px}
+.print-lunar{font-size:clamp(11px,2vw,14px)!important}
+.reception-paper .printed-content{align-items:center;text-align:center;justify-content:space-between;gap:7px}
+.print-signature{font-family:'Great Vibes',cursive!important;color:#9c3449!important;font-size:clamp(40px,8vw,65px)!important;line-height:1.15!important;margin:0 0 12px!important}
+.print-signature span{font-size:.6em}
+.print-invite{font-size:clamp(11px,2vw,15px)!important;letter-spacing:.04em}
+.guest-underline{width:80%;min-height:27px;border-bottom:1px dotted #777;font-size:clamp(13px,2.4vw,17px)!important;font-weight:600}
+.print-reception-date strong{display:block;color:#a65c6d;font-size:clamp(29px,6vw,43px);line-height:1.15;margin:3px 0}
+.print-reception-place p{margin:2px 0!important}
+.print-welcome{font-family:'Great Vibes',cursive!important;font-size:clamp(29px,6vw,42px)!important;color:#a43e54!important;line-height:1.2!important}
+.print-parents{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%;font-size:clamp(10px,2.1vw,15px);line-height:1.55}
+.print-parents div{display:flex;flex-direction:column}
+.print-parents b{font-size:1.1em}
+.directions-paper .printed-content{text-align:center;align-items:center;gap:18px}
+.print-direction-title{font-family:Georgia,serif!important;font-size:clamp(23px,5vw,32px)!important;color:#9c3449!important}
+.direction-address{max-width:340px;text-align:center}
+.direction-qr{width:min(57%,220px);aspect-ratio:1;object-fit:contain;background:white;padding:7px}
+.direction-link{font:600 13px 'Be Vietnam Pro',sans-serif;color:#9c3449}
+@media(max-width:500px){.site{padding:14px 5px 26px}.book-area{gap:3px}.nav{width:30px;height:38px;font-size:23px}.book{width:min(calc(100vw - 80px),390px)}.sheet.print-paper{padding:clamp(15px,4vw,27px)!important}.printed-content{gap:clamp(6px,1.6vw,10px)}.print-couple{margin:10px 0 16px!important}.print-place{margin-top:10px}.print-signature{margin-bottom:4px!important}.reception-paper .printed-content{gap:5px}}
