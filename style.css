@@ -97,3 +97,29 @@ html,body{overflow-x:hidden}
 }
 @media(max-width:375px){.book{height:590px}.book .flip-page{padding:25px 15px}.book .flip-page .ribbon{width:calc(100% + 30px);margin-left:-15px;margin-right:-15px}.book .flip-page .calendar>*{min-height:20px}.book .flip-page .qr{width:125px;height:125px}}
 @media(prefers-reduced-motion:reduce){.book .flip-page{animation:none!important}}
+
+/* Compact printed invitation layout */
+.book{width:min(100%,470px);max-width:470px;aspect-ratio:0.72;min-height:0;height:auto}
+.sheet{padding:clamp(20px,5vw,42px)!important;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:clamp(7px,1.5vw,13px);overflow:hidden;text-align:center}
+.sheet[hidden]{display:none!important}
+.sheet .watermark{position:absolute;right:7%;top:3%;font-size:clamp(95px,22vw,170px);color:#ead2c9;opacity:.43;z-index:0;pointer-events:none}
+.sheet>*:not(.watermark){position:relative;z-index:1}
+.sheet .eyebrow{margin:0;font-size:clamp(11px,1.5vw,14px);letter-spacing:.09em}
+.sheet p{margin:0;line-height:1.5}
+.sheet .small{font-size:clamp(10px,1.4vw,13px)}
+.cover-names{font-size:clamp(48px,9vw,74px);line-height:1.12}
+.cover-names span,.top-signature span{font-size:.6em}
+.fine-rule{width:55%;height:1px;background:#caa38d;margin:10px auto}
+.cover-caption{font-family:Georgia,serif;font-size:18px}
+.date-emphasis{font-family:Georgia,serif;font-size:clamp(26px,5vw,39px);font-weight:700;color:#994157}
+.bottom-message{font-family:Georgia,serif;font-style:italic;color:#a64d60;margin-top:20px!important}
+.couple-block{font-family:Georgia,serif;font-size:clamp(30px,6vw,44px);font-weight:500;line-height:1.25;margin:20px 0;color:#a45566}
+.strong-line{font-weight:700;font-family:Georgia,serif;font-size:clamp(13px,2.1vw,18px)}
+.compact-address{font-family:Georgia,serif;font-size:clamp(13px,2vw,17px);max-width:340px}
+.top-signature{font-size:clamp(34px,7vw,51px);margin-bottom:10px!important}
+.guest-line{min-height:28px;border-bottom:1px dotted #b89990;min-width:65%;font-family:Georgia,serif;font-weight:600}
+.invite-sentence{font-family:Georgia,serif;font-size:clamp(12px,1.8vw,15px)}
+.warm-message{font-size:clamp(28px,6vw,42px);line-height:1.1!important}
+.parents-two{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;font-family:Georgia,serif;font-size:clamp(11px,1.7vw,15px);line-height:1.65;margin-top:10px}
+.location-paper .qr{width:clamp(140px,38vw,230px);height:auto;max-height:230px;object-fit:contain}
+@media(max-width:550px){.site{padding:16px 10px}.site>h1{font-size:clamp(34px,9vw,52px)}.book-area{gap:3px}.nav{flex-shrink:0}.book{width:min(100%,390px)}.sheet{padding:24px 17px!important;gap:9px}.parents-two{gap:5px}.reception-paper{gap:7px}.reception-paper .warm-message{font-size:28px}}
